@@ -72,7 +72,7 @@ class ProductPlugin
     {
         $isAvailable = $proceed();
 
-        if ($isAvailable && $this->useStoreOffers()) {
+        if ($isAvailable && $this->useStoreOffers() && null !== $this->currentStore->getRetailer()) {
             $isAvailable = false;
             $offer       = $this->getCurrentOffer($product);
 
